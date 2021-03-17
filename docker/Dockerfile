@@ -8,7 +8,7 @@ WORKDIR /var/www
 ADD rootfs/start.sh /etc/start.sh
 RUN chmod +x /etc/start.sh
 
-RUN git clone https://github.com/HaschekSolutions/opentrashmail.git
+RUN git clone https://github.com/nhCoder/mailrush.git
 
 # nginx stuff
 ADD rootfs/nginx.conf /etc/nginx/conf.d/default.conf
@@ -20,7 +20,7 @@ WORKDIR /var/www/opentrashmail
 
 # Volumes to mount
 #VOLUME /var/lib/influxdb
-VOLUME /var/www/opentrashmail/data
+VOLUME /var/www/mailrush/data
 
 EXPOSE 80 25
 
