@@ -16,11 +16,12 @@ RUN mkdir -p /run/nginx
 RUN mkdir -p /var/log/nginx
 RUN sed -i 's/nobody/nginx/g' /etc/php7/php-fpm.d/www.conf
 
-WORKDIR /var/www/opentrashmail
+WORKDIR /var/www/mailrush
 
 # Volumes to mount
 #VOLUME /var/lib/influxdb
 VOLUME /var/www/mailrush/data
+
 
 EXPOSE 80 25
 

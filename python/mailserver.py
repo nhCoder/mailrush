@@ -125,12 +125,14 @@ if __name__ == '__main__':
         Config = ConfigParser.ConfigParser()
         Config.read("../config.ini")
         port = int(Config.get("MAILSERVER","MAILPORT"))
+        host = int(Config.get("MAILSERVER","HOST"))
+        
 
     #wow
 
     print "[i] Starting Mailserver on port",port
 
-    server = CustomSMTPServer(('143.198.233.196', port), None) # oka use your public IP here
+    server = CustomSMTPServer(('0.0.0.0', port), None) # use your public IP here
     print "[i] Ready to receive Emails"
     print ""
     asyncore.loop()
